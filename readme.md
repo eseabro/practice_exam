@@ -169,7 +169,7 @@ Submit the following:
 
 Make sure to comment your code thoroughly to explain your design decisions and how infinite graphs are handled.
 
-OLD Tasks (ignore this):
+## OLD Tasks (ignore this):
 
 Consider the uncountable graph function:
 An example of an uncountable graph is the simple graph G1 = (V (G1), E(G1))
