@@ -1,4 +1,4 @@
-from src.solution import Graph, count_vertices, count_edges, degree_of_vertex, bellman_ford, bfs, dfs, is_bipartite, connected_components
+from src.graph import Graph, count_vertices, count_edges, degree_of_vertex, bellman_ford, bfs, dfs, is_bipartite, connected_components
 
 def sample_graph():
     vertices = {0: [], 1: [], 2: [], 3: []}

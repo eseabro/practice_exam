@@ -21,7 +21,7 @@ In graph theory, **infinite graphs** are graphs that contain an infinite number 
 You will be building a `Graph` class that handles infinite graphs, implementing functions for common graph properties, and writing code to visualize these graphs. In addition, you will work on an implementation of the Bellman-Ford algorithm for shortest path problems.
 
 ### Task 1: Create a `Graph` Class Object
-You need to implement a Python class to represent a graph. This class should accommodate infinite graphs and include:
+Put all of your code in a file called graph.py. You need to implement a Python class to represent a graph. This class should accommodate infinite graphs and include:
 
 - A vertex set, which could be finite, countably infinite (e.g., integers), or uncountable (e.g., real numbers).
 - An edge set, represented in a way that supports infinite graphs. For example, you could describe edges with a mathematical rule (e.g., connect vertices if their difference is 1).
