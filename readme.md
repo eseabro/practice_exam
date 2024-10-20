@@ -149,7 +149,7 @@ Create a Python function `visualize_infinite_grid(start, steps)` to simulate and
 - Can you expand this visualization to more complex infinite graphs later?
 
 ```python
-def visualize_infinite_grid(start: Tuple[int, int], steps: int) -> None:
+def visualize_infinite_grid(graph:Graph, start: Tuple[int, int], steps: int) -> None:
 ```
 
 ### Task 6: Bellman-Ford Algorithm for Shortest Path
@@ -165,6 +165,32 @@ The Bellman-Ford algorithm computes the shortest paths from a given source verte
 def bellman_ford(graph: Graph, source: int) -> Dict[int, float]:
     return {}
 ```
+
+Here's some pseudocode for the bellman ford algorithm.
+```python
+function BellmanFord(graph, source):
+    # Step 1: Initialize distances from source to all vertices as infinity
+    # and distance to source itself as 0
+    for each vertex v in graph:
+        if v == source:
+            distance[v] = 0
+        else:
+            distance[v] = ∞
+
+    # Step 2: Relax all edges |V| - 1 times
+    for i from 1 to |V| - 1:   # |V| is the number of vertices
+        for each edge (u, v) with weight w in graph:
+            if distance[u] + w < distance[v]:
+                distance[v] = distance[u] + w
+
+    # Step 3: Check for negative-weight cycles by one more relaxation
+    for each edge (u, v) with weight w in graph:
+        if distance[u] + w < distance[v]:
+            print("Graph contains a negative-weight cycle")
+
+    return distance  # The shortest distance to each vertex from the source
+```
+
 
 ---
 
