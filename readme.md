@@ -224,28 +224,28 @@ def is_isomorphic(graph1: Graph, graph2: Graph) -> bool:
     return False
 ```
 
-## Task 10: Check if a Graph is Bipartite
+### Task 10: Check if a Graph is Bipartite
 
-### Objective
+**Objective**
 Implement a function `is_bipartite(graph: Graph) -> bool` that determines whether the given graph is bipartite. A bipartite graph is a graph whose vertices can be divided into two disjoint and independent sets such that every edge connects a vertex in one set to a vertex in the other set.
 
-### Requirements
+**Requirements**
 1. **Input**: The function takes a `graph` object that represents an undirected graph. The graph can be represented as an adjacency list or another suitable format.
   
 2. **Output**: The function should return `True` if the graph is bipartite, and `False` otherwise.
 
-### Implementation Details
+**Implementation Details**
 - Use a breadth-first search (BFS) or depth-first search (DFS) approach to traverse the graph.
 - Maintain a coloring scheme (using two colors) to determine if adjacent nodes are in different sets.
 - If at any point two adjacent nodes have the same color, return `False`.
 - If the graph is successfully colored without conflicts, return `True`.
 
-### Considerations
+*Considerations*
 - Handle both connected and disconnected graphs.
 - Ensure that the function can manage graphs with cycles.
 - Consider edge cases, such as empty graphs or graphs with a single vertex.
 
-### Example Usage
+*Example Usage*
 ```python
 graph = {
     0: [1, 3],
@@ -265,23 +265,23 @@ graph2 = {
 assert is_bipartite(graph2) == False  # The graph is not bipartite
 ```
 
-## Task 11: Find Connected Components in a Graph
+### Task 11: Find Connected Components in a Graph
 
-### Objective
+**Objective**
 Implement a function `connected_components(graph: Graph) -> List[List[int]]` that returns all the connected components of the given graph. A connected component is a subset of the graph where there is a path between any two vertices in the subset, and which is connected to no additional vertices in the supergraph.
 
-### Requirements
+**Requirements**
 1. **Input**: The function takes a `graph` object that represents an undirected graph. The graph can be represented as an adjacency list or another suitable format.
   
 2. **Output**: The function should return a list of lists, where each inner list contains the vertices of a connected component.
 
-### Implementation Details
+**Implementation Details**
 - Use depth-first search (DFS) or breadth-first search (BFS) to explore each component of the graph.
 - Maintain a set of visited nodes to ensure each node is processed only once.
 - For each unvisited node, initiate a search to find all reachable nodes, marking them as visited and adding them to the current component.
 - Once all reachable nodes are found, add the component to the list of connected components.
 
-### Example Usage
+*Example Usage*
 ```python
 graph = {
     0: [1],
