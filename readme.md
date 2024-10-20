@@ -198,20 +198,21 @@ function BellmanFord(graph, source):
 ## Related Tasks
 
 ### Task 7: Breadth-First Search (BFS) in Infinite Graphs
-Extend your `Graph` class to support a breadth-first search (BFS) algorithm. This algorithm should handle infinite graphs and return results within the first `n` steps.
+Extend your Graph class to support a breadth-first search (BFS) algorithm. This algorithm should handle infinite graphs and return results within the first n steps. The BFS should search for a specific target node and stop if it reaches the maximum number of iterations.
 
-- Use BFS to explore a specific region of a countably infinite graph.
+-  Use BFS to explore a specific region of a countably infinite graph and search for a given target node.
+
 
 ```python
-def bfs(graph: Graph, start: int, steps: int) -> List[int]:
+def bfs(graph: Graph, start: int, target: int, max_iterations: int=100) -> List[int]:
     return []
 ```
 
 ### Task 8: Depth-First Search (DFS) in Infinite Graphs
-Implement the depth-first search (DFS) algorithm for your `Graph` class. Like BFS, this should support infinite graphs but terminate after exploring the first `n` vertices or edges.
+Implement the depth-first search (DFS) algorithm for your Graph class. Like BFS, this should support infinite graphs but terminate after exploring the first n vertices or edges. The DFS should search for a specific target node and stop if it reaches the maximum number of iterations.
 
 ```python
-def dfs(graph: Graph, start: int, steps: int) -> List[int]:
+def dfs(graph: Graph, start: int, target: int, max_iterations: int=100) -> List[int]:
     return []
 ```
 
