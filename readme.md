@@ -25,7 +25,8 @@ Put all of your code in a file called graph.py. You need to implement a Python c
 
 - A vertex set, which could be finite, countably infinite (e.g., integers), or uncountable (e.g., real numbers).
 - An edge set, represented in a way that supports infinite graphs. For example, you could describe edges with a mathematical rule (e.g., connect vertices if their difference is 1).
-  
+- A set of weights for each edge in the graph. This can be done with a dictionary. Initialize the weights property to None if none is provided.
+
 *Considerations*: 
 - How will you handle uncountable graphs like those involving real numbers?
 - How will you handle edge definitions for infinite graphs?

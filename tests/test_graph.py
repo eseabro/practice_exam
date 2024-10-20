@@ -66,13 +66,13 @@ def test_connected_components():
 
 def test_empty_graph():
     from src.graph import Graph, count_vertices, count_edges
-    empty_graph = Graph({}, {})
+    empty_graph = Graph([], [])
     assert count_vertices(empty_graph) == 0
     assert count_edges(empty_graph) == 0
 
 def test_single_node_graph():
     from src.graph import Graph, count_vertices, degree_of_vertex, is_bipartite, count_edges
-    single_node = Graph({0: []}, {0: []})
+    single_node = Graph([], [0])
     assert count_vertices(single_node) == 1
     assert count_edges(single_node) == 0
     assert degree_of_vertex(single_node, 0) == 0
