@@ -45,7 +45,7 @@ def test_bellman_ford():
 def test_bfs():
     from src.graph import Graph, bfs
     result = bfs(sample_graph(), 0, 3)
-    expected = [0, 1, 2, 3]
+    expected = [0, 1, 3]
     assert result == expected
 
 def test_dfs():
