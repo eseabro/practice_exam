@@ -71,7 +71,7 @@ def test_empty_graph():
     assert count_edges(empty_graph) == 0
 
 def test_single_node_graph():
-    from src.graph import Graph, count_vertices, degree_of_vertex, is_bipartite
+    from src.graph import Graph, count_vertices, degree_of_vertex, is_bipartite, count_edges
     single_node = Graph({0: []}, {0: []})
     assert count_vertices(single_node) == 1
     assert count_edges(single_node) == 0
