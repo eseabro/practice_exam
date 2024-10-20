@@ -48,6 +48,65 @@ def count_vertices(graph: Graph) -> int:
 
 ```
 
+#### Graph examples:
+**2-Regular Uncountable Graph:**
+The 2-regular uncountable graph has a vertex set defined as V=RV=R, and two vertices xx and yy are connected if ∣x−y∣=1∣x−y∣=1.
+
+In Python, we'll represent a finite portion of this graph by considering a range of real numbers and linking any two vertices that are exactly 1 unit apart.
+```python
+from typing import List, Tuple
+
+class TwoRegularGraph:
+    def __init__(self, vertices: List[float]):
+        self.vertices = vertices
+        self.edges = self.generate_edges()
+
+    def generate_edges(self) -> List[Tuple[float, float]]:
+        edges = []
+        for v in self.vertices:
+            if v + 1 in self.vertices:
+                edges.append((v, v + 1))
+            if v - 1 in self.vertices:
+                edges.append((v, v - 1))
+        return edges
+
+# Example usage:
+vertices = [0.0, 1.0, 2.0, 3.0, 4.0]  # A finite portion of R
+graph = TwoRegularGraph(vertices)
+print("Vertices:", graph.vertices)
+print("Edges:", graph.edges)
+```
+**Countably Infinite Graph:**
+The countably infinite graph has a vertex set V=RV=R, and two vertices xx and yy are connected if x−y∈Q∖{0}x−y∈Q∖{0}, meaning the difference between the two vertices is a non-zero rational number.
+
+In Python, we'll simulate this by using a set of rational numbers to define the connections between vertices.
+```python
+from fractions import Fraction
+from typing import List, Tuple, Set
+
+class CountablyInfiniteGraph:
+    def __init__(self, vertices: List[float], rationals: Set[Fraction]):
+        self.vertices = vertices
+        self.rationals = rationals  # Set of rational numbers defining the edges
+        self.edges = self.generate_edges()
+
+    def generate_edges(self) -> List[Tuple[float, float]]:
+        edges = []
+        for v in self.vertices:
+            for q in self.rationals:
+                if v + float(q) in self.vertices:
+                    edges.append((v, v + float(q)))
+                if v - float(q) in self.vertices:
+                    edges.append((v, v - float(q)))
+        return edges
+
+# Example usage:
+vertices = [0.0, 0.5, 1.0, 1.5, 2.0]  # A finite portion of R
+rationals = {Fraction(1, 2), Fraction(1, 3), Fraction(1)}  # Set of rationals
+graph = CountablyInfiniteGraph(vertices, rationals)
+print("Vertices:", graph.vertices)
+print("Edges:", graph.edges)
+```
 
 ### Task 3: Edge Set Counter
 Write a method to count the number of edges in the graph.
