@@ -217,11 +217,26 @@ def dfs(graph: Graph, start: int, target: int, max_iterations: int=100) -> List[
 ```
 
 ### Task 9: Graph Isomorphism Check
-Write a function to determine if two finite graphs are isomorphic (i.e., if there is a one-to-one correspondence between their vertex sets and edge sets).
+Write a function to determine if two finite graphs are isomorphic (i.e., if there is a one-to-one correspondence between their vertex sets and edge sets). Keep in mind that the values of the vertices and edges do not need to be the same. 
 
 ```python
 def is_isomorphic(graph1: Graph, graph2: Graph) -> bool:
     return False
+```
+
+*Examples*
+The two following graphs are isomorphic
+```python
+    graph_a = {
+        0: [1, 2],
+        1: [0, 2],
+        2: [0, 1],
+    }
+    graph_b = {
+        'a': ['b', 'c'],
+        'b': ['a', 'c'],
+        'c': ['a', 'b'],
+    }
 ```
 
 ### Task 10: Check if a Graph is Bipartite

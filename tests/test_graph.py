@@ -54,6 +54,60 @@ def test_dfs():
     expected = [0, 1, 3]  # Note that DFS can have different valid orders
     assert set(result) == set(expected)  # Check for membership
 
+def is_isomorphic(graph1: Graph, graph2: Graph) -> bool:
+    # Placeholder for the actual isomorphic check logic
+    return False
+
+# Test Cases for the is_isomorphic function
+def test_is_isomorphic():
+    # Graphs with the same structure
+    graph_a = {
+        0: [1, 2],
+        1: [0, 2],
+        2: [0, 1],
+    }
+    graph_b = {
+        'a': ['b', 'c'],
+        'b': ['a', 'c'],
+        'c': ['a', 'b'],
+    }
+    assert is_isomorphic(graph_a, graph_b) is True
+
+    # Graphs that are not isomorphic (different structures)
+    graph_c = {
+        0: [1],
+        1: [0, 2],
+        2: [1],
+    }
+    graph_d = {
+        'x': ['y'],
+        'y': ['x'],
+    }
+    assert is_isomorphic(graph_c, graph_d) is False
+
+    # Graphs with different number of vertices
+    graph_e = {
+        0: [1],
+        1: [0],
+    }
+    graph_f = {
+        'p': ['q'],
+        'q': ['p'],
+        'r': []
+    }
+    assert is_isomorphic(graph_e, graph_f) is False
+
+    # Empty graphs should be isomorphic
+    graph_g = {}
+    graph_h = {}
+    assert is_isomorphic(graph_g, graph_h) is True
+
+    # Graphs with one vertex and no edges should be isomorphic
+    graph_i = {0: []}
+    graph_j = {'a': []}
+    assert is_isomorphic(graph_i, graph_j) is True
+
+    
 def test_is_bipartite():
     from src.graph import Graph, is_bipartite
     assert is_bipartite(sample_graph()) is True
