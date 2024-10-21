@@ -1,2 +1,4 @@
 *
-!.gitignore,_init__.py,solution.py
+!.gitignore
+!__init__.py
+!solution.py
