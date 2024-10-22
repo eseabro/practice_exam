@@ -126,6 +126,77 @@ class MyClass:
         return "This is a static method."
 ```
 
+## Python Special Methods (Magic/Dunder Methods)
+
+These methods provide a way to customize behavior for Python classes. They are called automatically when certain operations are performed on an object.
+
+### Comparison Methods
+
+- `__lt__(self, other)`: Defines behavior for the `<` operator.
+- `__le__(self, other)`: Defines behavior for the `<=` operator.
+- `__gt__(self, other)`: Defines behavior for the `>` operator.
+- `__ge__(self, other)`: Defines behavior for the `>=` operator.
+- `__eq__(self, other)`: Defines behavior for the `==` operator.
+- `__ne__(self, other)`: Defines behavior for the `!=` operator.
+
+### Arithmetic Methods
+
+- `__add__(self, other)`: Defines behavior for the `+` operator.
+- `__sub__(self, other)`: Defines behavior for the `-` operator.
+- `__mul__(self, other)`: Defines behavior for the `*` operator.
+- `__truediv__(self, other)`: Defines behavior for the `/` operator.
+- `__floordiv__(self, other)`: Defines behavior for the `//` operator.
+- `__mod__(self, other)`: Defines behavior for the `%` operator.
+- `__pow__(self, other)`: Defines behavior for the `**` operator.
+
+### Representation Methods
+
+- `__repr__(self)`: Defines the official string representation of an object, typically used for debugging. Called by `repr()`.
+- `__str__(self)`: Defines the informal string representation of an object. Called by `str()` and `print()`.
+
+### Object Lifecycle Methods
+
+- `__init__(self, ...)`: Constructor method, called when an object is instantiated.
+- `__del__(self)`: Destructor method, called when an object is about to be destroyed.
+- `__new__(cls, ...)`: Low-level method called before `__init__`. Used for controlling object creation.
+  
+### Container Emulation Methods
+
+- `__len__(self)`: Defines behavior for `len()` function, returns the length of an object.
+- `__getitem__(self, key)`: Defines behavior for getting an item `obj[key]`.
+- `__setitem__(self, key, value)`: Defines behavior for setting an item `obj[key] = value`.
+- `__delitem__(self, key)`: Defines behavior for deleting an item `del obj[key]`.
+
+### Callable Objects
+
+- `__call__(self, ...)`: Allows an object to be called as a function.
+
+### Context Manager Methods
+
+- `__enter__(self)`: Defines behavior when entering a context (e.g., in a `with` statement).
+- `__exit__(self, exc_type, exc_value, traceback)`: Defines behavior when exiting a context.
+
+### Example
+
+```python
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __repr__(self):
+        return f"MyClass({self.value})"
+    
+    def __str__(self):
+        return f"Value: {self.value}"
+
+    def __lt__(self, other):
+        return self.value < other.value
+    
+    def __add__(self, other):
+        return MyClass(self.value + other.value)
+
+```
+
 ## List operations
 *Remember that list operations are inplace*
 
